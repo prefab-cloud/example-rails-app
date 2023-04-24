@@ -18,5 +18,8 @@ module ExampleApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    $prefab = Prefab::Client.new
+    $prefab.set_rails_loggers
   end
 end
