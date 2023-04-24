@@ -87,9 +87,30 @@ GEM
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     erubi (1.12.0)
+    faraday (2.7.4)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
+    ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     globalid (1.1.0)
       activesupport (>= 5.0)
+    google-protobuf (3.22.3-arm64-darwin)
+    googleapis-common-protos-types (1.5.0)
+      google-protobuf (~> 3.14)
+    http (5.1.1)
+      addressable (~> 2.8)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.4.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
@@ -101,9 +122,17 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    ld-eventsource (2.2.2)
+      concurrent-ruby (~> 1.0)
+      http (>= 4.4.1, < 6.0.0)
+    llhttp-ffi (0.4.0)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    macaddr (1.7.2)
+      systemu (~> 2.6.5)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -127,6 +156,13 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
+    prefab-cloud-ruby (0.23.8)
+      concurrent-ruby (~> 1.0, >= 1.0.5)
+      faraday
+      google-protobuf
+      googleapis-common-protos-types
+      ld-eventsource
+      uuid
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -166,6 +202,7 @@ GEM
     reline (0.3.3)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.9.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -181,6 +218,7 @@ GEM
     sqlite3 (1.6.2-arm64-darwin)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    systemu (2.6.5)
     tailwindcss-rails (2.0.28-arm64-darwin)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -191,6 +229,11 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
+    uuid (2.3.9)
+      macaddr (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -217,6 +260,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  prefab-cloud-ruby
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   redis (~> 4.0)
