@@ -1,21 +1,41 @@
 <div class="flex flex-col m-auto">
   <div class="space-y-8">
     <h1 class="text-2xl font-semibold flex gap-4 items-center">
-      Hello!
+      <span>👋 <%= current_user['name'] %></span>
+      <%= image_tag "#{current_user['name'].downcase}.jpg", width: "48px", class: "rounded-full" %>
     </h1>
 
-    <div class="border border-yellow-100 rounded p-4 flex gap-4 items-center justify-center bg-yellow-50">
-      <p class="text-sm">
+    <% if $prefab.enabled?("gdpr.banner") %>
+      <div class="border border-yellow-100 rounded p-4 flex gap-4 items-center justify-center bg-yellow-50">
+        <p class="text-sm">
         This website uses cookies to ensure you get the best experience our lawyers insist you have.
-      </p>
+        </p>
 
-      <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">
-        Accept
-      </button>
-    </div>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">
+          Accept
+        </button>
+      </div>
+    <% end %>
 
     <p>Website content goes here.</p>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis odio dolor, et luctus orci luctus non. Pellentesque commodo tortor ut nunc tincidunt faucibus vel at massa. Aliquam dignissim eget orci sed scelerisque. Aliquam in nisi sapien. Nullam vehicula, tellus quis finibus semper, augue dui rutrum urna, volutpat commodo ex diam at magna. Aliquam posuere tortor ac ante faucibus dapibus. In venenatis odio sem, eu dignissim augue consectetur nec. Proin lobortis semper orci, non consectetur dolor. Maecenas varius luctus magna, et feugiat tortor posuere et. Morbi fermentum, risus at porta fermentum, turpis purus consectetur justo, in maximus odio neque ac nunc. Nunc pellentesque pretium ultrices. Vestibulum pretium scelerisque risus et porttitor.</p>
+  </div>
+
+  <div class="mt-24 space-y-4 border border-blue-100 rounded p-8 bg-blue-50">
+    <p>Your server would provide context to Prefab based on your current user and request. For this demo, we fake the current user.</p>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+      <% Authentication::DEMO_USERS.each do |user| %>
+        <form action="/sign-in-as" method="POST" class="space-y-4 grow">
+          <textarea class="w-full h-24 font-mono" name="user"><%= user.to_json %></textarea>
+
+          <div class="flex gap-2 justify-center items-center w-full">
+            <%= image_tag "#{user[:name].downcase}.jpg", width: "48px", class: "rounded-full" %>
+            <input class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white p-2 rounded" type="submit" value="<%= "Sign in as #{user[:name]}" %>" />
+          </div>
+        </form>
+      <% end %>
+    </div>
   </div>
 </div>

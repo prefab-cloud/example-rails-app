@@ -5,4 +5,9 @@ class HomeController < ApplicationController
     logger.warn  '⚠️ Hello from Rails.logger.warn'
     logger.error '🚨 Hello from Rails.logger.error'
   end
+
+  def sign_in_as
+    set_current_user(params[:user])
+    redirect_to root_path
+  end
 end
