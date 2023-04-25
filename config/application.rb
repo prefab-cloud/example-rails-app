@@ -21,5 +21,13 @@ module ExampleApp
 
     $prefab = Prefab::Client.new
     $prefab.set_rails_loggers
+
+    $prefab.on_update do
+      if defined?(Turbo::StreamsChannel)
+        Turbo::StreamsChannel.broadcast_replace_to :prefab_values,
+          target: 'prefab-values',
+          partial: 'home/prefab_values'
+      end
+    end
   end
 end
