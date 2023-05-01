@@ -6,6 +6,11 @@ This repo shows how to add [Prefab] to your Rails app to get access to features 
 - Feature flags
 - Live config
 
+Follow along on YouTube
+
+[![YouTube](https://img.youtube.com/vi/F1aaGwGAIUQ/0.jpg)](https://www.youtube.com/watch?v=F1aaGwGAIUQ)
+
+
 ## `rails new`
 
 [Full diff](https://github.com/prefab-cloud/example-rails-app/compare/new-repo...rails-new)
