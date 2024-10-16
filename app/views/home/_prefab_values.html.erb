@@ -4,24 +4,28 @@
   <table class="border-separate w-full">
     <thead class="bg-gray-50 text-left">
       <th class="px-4">Key</th>
-      <th class="px-4">Default<span class="hidden md:inline"> Value</span></th>
+      <th class="px-4">Default<span class="hidden md:inline">
+          Value</span></th>
       <th class="px-4">
         Evaluated
         <span class="hidden md:inline">
           Value
-          <abbr class="bg-blue-100 rounded-full p-1 no-underline cursor-help" title="The value as evaluated in the current context">?</abbr>
+          <abbr
+            class="bg-blue-100 rounded-full p-1 no-underline cursor-help"
+            title="The value as evaluated in the current context"
+          >?</abbr>
         </span>
       </th>
       <th class="px-4 hidden lg:table-cell">Type</th>
       <th class="px-4 hidden lg:table-cell">Source</th>
     </thead>
 
-    <tbody class="<%= $prefab.get("admin.prefab-values.classes", "") %>">
-      <% $prefab.resolver.presenter.each do |key, config| %>
+    <tbody class="<%= Prefab.get("admin.prefab-values.classes", "") %>">
+      <% Prefab.instance.resolver.presenter.each do |key, config| %>
         <tr class="odd:bg-blue-50">
           <td class="p-4 break-all"><%= key %></td>
           <td class="p-4"><%= config.value %></td>
-          <td class="p-4"><%= $prefab.get(key) %></td>
+          <td class="p-4"><%= Prefab.get(key) %></td>
           <td class="p-4 hidden lg:table-cell"><%= config.value.class %></td>
           <td class="p-4 hidden lg:table-cell"><%= config.source %></td>
         </tr>

@@ -1,5 +1,7 @@
 # Example Prefab Rails Application
 
+NOTE: this has been updated in the latest commit to use the newest version of the Prefab Ruby SDK
+
 This repo shows how to add [Prefab] to your Rails app to get access to features like
 
 - Dynamic log levels
@@ -9,7 +11,6 @@ This repo shows how to add [Prefab] to your Rails app to get access to features 
 Follow along on YouTube
 
 [![YouTube](https://img.youtube.com/vi/F1aaGwGAIUQ/0.jpg)](https://www.youtube.com/watch?v=F1aaGwGAIUQ)
-
 
 ## `rails new`
 
