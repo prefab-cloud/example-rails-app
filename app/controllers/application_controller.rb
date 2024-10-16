@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include Authentication
 
   around_action do |_, block|
-    $prefab.with_context(prefab_context, &block)
+    Prefab.with_context(prefab_context, &block)
   end
 
   def prefab_context
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       },
 
       user: {
-        id: current_user&.id,
+        key: current_user&.id,
         email: current_user&.email,
         country: current_user&.country,
       }

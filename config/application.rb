@@ -19,14 +19,13 @@ module ExampleApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    $prefab = Prefab::Client.new
-    $prefab.set_rails_loggers
+    Prefab.init
 
-    $prefab.on_update do
+    Prefab.instance.on_update do
       if defined?(Turbo::StreamsChannel)
         Turbo::StreamsChannel.broadcast_replace_to :prefab_values,
-          target: 'prefab-values',
-          partial: 'home/prefab_values'
+                                                   target: 'prefab-values',
+                                                   partial: 'home/prefab_values'
       end
     end
   end

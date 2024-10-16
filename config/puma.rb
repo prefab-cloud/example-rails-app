@@ -43,6 +43,6 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 plugin :tmp_restart
 
 on_worker_boot do
-  $prefab = Prefab::Client.new
-  $prefab.set_rails_loggers
+  Prefab.fork
+  SemanticLogger.reopen # if you are using SemanticLogger
 end
