@@ -189,7 +189,7 @@ GEM
       semantic_logger (!= 4.16.0)
       uuid
     public_suffix (6.0.1)
-    puma (5.6.5)
+    puma (5.6.9)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.8)

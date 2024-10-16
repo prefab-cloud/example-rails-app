@@ -1,6 +1,6 @@
 # Example Prefab Rails Application
 
-NOTE: this has been updated in the latest commit to use the newest version of the Prefab Ruby SDK
+NOTE: this has been updated in the https://github.com/prefab-cloud/example-rails-app/pull/2 to use the newest version of the Prefab Ruby SDK
 
 This repo shows how to add [Prefab] to your Rails app to get access to features like
 
